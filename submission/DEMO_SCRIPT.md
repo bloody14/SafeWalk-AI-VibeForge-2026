@@ -7,14 +7,14 @@
 
 ### 0:20–0:45 — Route Search & Comparison
 “On the SafeWalk AI homepage, we click **'Load Evening Demo Scenario'** (Downtown Metro Station to University Innovation Hub & Public Library). The interactive OpenStreetMap immediately renders three calibrated corridors:
-- **Condition-Aware Route (Active Boulevard):** 18 min walk, 1420 meters, Awareness Index **85/100**.
+- **Condition-Aware Route (Active Boulevard):** 18 min walk, 1420 meters, Awareness Index **92/100**.
 - **Fastest Direct Route (Industrial Alley):** 14 min walk, 1150 meters, Awareness Index **15/100**.
-- **Transit Corridor Alternative:** 16 min walk, 1280 meters, Awareness Index **67/100**.
+- **Transit Corridor Alternative:** 16 min walk, 1280 meters, Awareness Index **68/100**.
 Notice how clicking between cards instantly updates the map polylines and highlights the selected corridor.”
 
 ### 0:45–1:10 — Transparent Deterministic Heuristic
 “Unlike black-box models that invent safety probabilities, SafeWalk uses a transparent, deterministic algorithm. Clicking **'Inspect Deterministic Formula Breakdown'** reveals the exact math:
-`Baseline (50) + Lighting (+20) + Activity (0) + Incident Factor (+5) + Community Observations (+10) = 85/100`.
+`Baseline (50) + Lighting (+20) + Activity (+15) + Incident Factor (+5) + Community Observations (+10) = 92/100` (capped at 92 to prevent false safety guarantees).
 Every indicator carries a clear provenance badge: `[DEMO / SIMULATED]`, `[PUBLIC PROXY]`, or `[COMMUNITY]`. Missing data is explicitly marked `UNKNOWN` and never scored as safe.”
 
 ### 1:10–1:35 — Server-Side AI Intelligence & Fallback

@@ -22,7 +22,7 @@ Official Gemini API getting-started: https://ai.google.dev/gemini-api/docs/get-s
 1. Kundan opens AI Studio and copies their key.
 2. Kundan enters it directly into `app/.env.local`:
    ```dotenv
-   GEMINI_API_KEY=AIzaSy...
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
 3. Restart server or refresh browser; the app automatically switches status from `Engine: Deterministic Fallback` to `Engine: Gemini 1.5 Flash`.
 4. The key remains 100% server-side and is never exposed in browser JavaScript or client responses.

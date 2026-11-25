@@ -28,7 +28,7 @@ This document contains the verified facts, technical architecture, feature list,
 - **Product Definition:** An urban route-awareness comparison engine — NOT a crime prediction tool and NOT a false safety guarantee.
 - **The 4-Step User Journey:**
   1. **Select Corridor:** Type endpoints or click 1-Click Evening Demo (Downtown Transit to University Tech Hub).
-  2. **Compare Routes:** Condition-Aware Route (Active Blvd, 18 min, 85/100 Awareness) vs. Fastest Route (Industrial Alley, 14 min, 15/100 Awareness).
+  2. **Compare Routes:** Condition-Aware Route (Active Blvd, 18 min, 92/100 Awareness) vs. Fastest Route (Industrial Alley, 14 min, 15/100 Awareness).
   3. **Inspect Heuristics:** Open the transparent mathematical formula breakdown (Lighting + Activity - Incidents + Community notes).
   4. **Complete Walk & Submit Feedback:** Rate observed lighting, footfall, and hazards; feedback immediately updates local community layer.
 
@@ -38,7 +38,7 @@ This document contains the verified facts, technical architecture, feature list,
 - **Screenshot 1:** `submission/evidence/screenshots/S01_full_journey_verified.png`
   - *Proves:* Interactive OpenStreetMap with color-coded polylines (green, amber, indigo), side-by-side comparison cards, AI condition intelligence card, and live community observation feed.
 - **Screenshot 2:** `submission/evidence/screenshots/S02_map_and_disclosures.png`
-  - *Proves:* Live OSM tile rendering, inspectable deterministic formula breakdown (`Baseline 50 + Lighting +20... = 85`), and transparency disclosures modal with dataset provenance classification.
+  - *Proves:* Live OSM tile rendering, inspectable deterministic formula breakdown (`Baseline 50 + Lighting +20 + Activity +15... = 92`), and transparency disclosures modal with dataset provenance classification.
 - **Demo Script:** Follows 2-minute script in `submission/DEMO_SCRIPT.md`.
 
 ---

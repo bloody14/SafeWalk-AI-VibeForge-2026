@@ -64,26 +64,26 @@ export const DisclosuresModal: React.FC<DisclosuresModalProps> = ({ isOpen, onCl
                   <tr>
                     <td className="p-2.5 font-medium text-white">Map Geometry & Tiles</td>
                     <td className="p-2.5"><span className="px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">PUBLIC</span></td>
-                    <td className="p-2.5">OpenStreetMap & CARTO</td>
-                    <td className="p-2.5">Live tile renderer</td>
+                    <td className="p-2.5">OpenStreetMap Contributors</td>
+                    <td className="p-2.5">Live standard tile layer (tile.openstreetmap.org)</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-medium text-white">Street Lighting Layer</td>
                     <td className="p-2.5"><span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">DEMO / SIMULATED</span></td>
-                    <td className="p-2.5">City Open Data Luminaire Proxy</td>
-                    <td className="p-2.5">Calibrated 2026 proxy</td>
+                    <td className="p-2.5">Simulated Luminaire Proxy</td>
+                    <td className="p-2.5">Demonstration proxy (not real-time measured lux)</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-medium text-white">Reported Incidents</td>
                     <td className="p-2.5"><span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">DEMO / SIMULATED</span></td>
-                    <td className="p-2.5">Public Safety Log Sample</td>
-                    <td className="p-2.5">90-day non-violent proxy</td>
+                    <td className="p-2.5">Simulated Incident Sample</td>
+                    <td className="p-2.5">Demonstration sample (not verified police dispatch feed)</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-medium text-white">Pedestrian Footfall</td>
                     <td className="p-2.5"><span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">DEMO PROXY</span></td>
-                    <td className="p-2.5">Commercial Corridor Proxy</td>
-                    <td className="p-2.5">Evening interval estimate</td>
+                    <td className="p-2.5">Commercial Footfall Proxy</td>
+                    <td className="p-2.5">Calibrated evening proxy (no live pedestrian tracking)</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-medium text-white">Post-Walk Feedback</td>

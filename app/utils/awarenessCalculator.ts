@@ -50,10 +50,10 @@ export function calculateAwarenessIndex(factors: RouteFactors): {
 
   // 2. Pedestrian Activity
   if (factors.pedestrianActivity.status !== 'unknown') {
-    const lvl = factors.pedestrianActivity.level?.toLowerCase();
-    if (lvl === 'high' || lvl === 'busy') activityPts = 15;
-    else if (lvl === 'moderate') activityPts = 8;
-    else if (lvl === 'low' || lvl === 'quiet' || lvl === 'deserted') activityPts = -12;
+    const lvl = factors.pedestrianActivity.level?.toLowerCase() || '';
+    if (lvl.includes('high') || lvl.includes('busy')) activityPts = 15;
+    else if (lvl.includes('moderate')) activityPts = 8;
+    else if (lvl.includes('low') || lvl.includes('quiet') || lvl.includes('deserted')) activityPts = -12;
   }
 
   // 3. Reported Incidents

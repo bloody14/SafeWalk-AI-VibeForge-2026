@@ -12,26 +12,27 @@ The team reports receiving organiser approval to build a completely fresh implem
 
 This generic SafeWalk planning/prompt/evidence pack was prepared before the competition. Disclose its use if asked. It contains planning documentation and blank templates, not the newly built application.
 
-## Other resources — fill actual details
+## Other resources — actual details
 
 | Resource, library, API, dataset, template or service | Source/provider | How used | Pre-existing or obtained during contest | Disclosure done |
 |---|---|---|---|---|
-| Next.js / React / TypeScript | Open Source (Vercel) | Full-stack framework & server API routes | Installed during contest | Disclosed |
+| Next.js 14 / React 18 / TypeScript | Open Source (Vercel) | Full-stack framework & server API routes | Installed during contest | Disclosed |
 | Tailwind CSS & Lucide Icons | Open Source | UI styling and accessible iconography | Installed during contest | Disclosed |
 | Leaflet & React-Leaflet | Open Source | Interactive route and point-of-interest map | Installed during contest | Disclosed |
-| OpenStreetMap & CartoDB | OpenStreetMap Contributors / Carto | Map tiles and base geospatial reference | Public web service queried during contest | Disclosed |
-| OSRM Public Routing API | Open Source Routing Machine | Real-time pedestrian routing calculation | Public API queried during contest | Disclosed |
-| Google Gemini API (`@google/genai` / AI Studio) | Google Cloud / AI Studio | Server-side structured route factor explanation | Official API called via server route | Disclosed |
+| OpenStreetMap Standard Tiles | OpenStreetMap Contributors (`tile.openstreetmap.org`) | Public map tiles (no proprietary key required) | Public web service queried during contest | Disclosed |
+| Google Gemini API (`@google/genai` / AI Studio) | Google Cloud / AI Studio | Server-side structured route factor explanation (with deterministic fallback) | Official API integration in server route | Disclosed |
 
 ## Data provenance
 
-- Map tiles: OpenStreetMap contributors via CartoDB / OSM standard tiles.
-- Pedestrian routes: Calculated via OSRM pedestrian profile or fallback calibrated demo corridor (Downtown Transit to University Tech Hub).
-- Street lighting / reported incident datasets: Explicitly badged as `[DEMO / SIMULATED]` and `[PUBLIC INCIDENT REPORT PROXY]` to ensure absolute data transparency.
-- Community feedback: Stored locally in browser `localStorage`, marked as `[UNVERIFIED COMMUNITY SUBMISSION]` and never misrepresented as verified or globally synchronised facts.
+- **Map tiles:** OpenStreetMap contributors standard raster tiles (`https://tile.openstreetmap.org/{z}/{x}/{y}.png`). No CARTO or third-party proprietary key endpoints are used.
+- **Pedestrian routes:** Pre-calibrated demonstration walking corridors (Downtown Transit to University Innovation Hub) with interactive route geometries. No live external routing service (e.g. OSRM) is queried; search queries use simulated resolution.
+- **Street lighting, incident, and pedestrian datasets:** Explicitly badged as `[DEMO / SIMULATED]` and `[DEMO PROXY]`. These are not measured real-world lux levels, verified police dispatch records, or live crowd surveillance feeds.
+- **Community feedback:** Stored locally in browser `localStorage`, marked as `[UNVERIFIED COMMUNITY OBSERVATION]` and never misrepresented as verified or globally synchronised facts.
+- **Route-Awareness Index:** A transparent, deterministic application-level heuristic (10–92/100). Not a statistically validated crime-risk score or safety probability.
 
 ## Organiser approval
 
-- Approval reported: Yes.
+- Approval reported: Yes (reported by team participant).
+- Actual date/person/channel/reference: Verbal/channel confirmation reported by participant; formal written record pending upload by team.
 - Start timestamp: 2026-11-25 11:18:38 IST.
 - Scope approved: Fresh SafeWalk full-stack implementation with full documentation & disclosure.
