@@ -1,0 +1,23 @@
+# Node dependencies
+app/node_modules/
+node_modules/
+
+# Next.js build output
+app/.next/
+.next/
+app/out/
+out/
+
+# Environment secrets
+.env*.local
+.env
+app/.env*.local
+app/.env
+
+# OS / logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
