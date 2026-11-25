@@ -142,7 +142,7 @@ function generateDeterministicExplanation(
 
   let explanation = "";
   if (route.id === 'route-condition-aware') {
-    explanation = `The Condition-Aware Route prioritizes well-lit transit arteries with ${lightingPct}% verified operational streetlighting and ${activityLvl} pedestrian footfall from active commercial storefronts. No incidents were recorded in the recent proxy observation period.`;
+    explanation = `The Condition-Aware Route prioritizes well-lit transit arteries with an ${lightingPct}% simulated street-lighting proxy indicator and a ${activityLvl} demo pedestrian-activity proxy from evening commercial storefronts. No incidents were recorded in the simulated incident sample for this corridor.`;
   } else if (route.id === 'route-fastest') {
     explanation = `The Fastest Route saves travel time by utilizing minor connector corridors, but exhibits lower lighting coverage (${lightingPct}%) and ${activityLvl} evening footfall, alongside ${incidentCount} historical reported nuisance/theft incidents in the proxy dataset.`;
   } else {

@@ -77,21 +77,21 @@ const routeBFactors = {
     source: "Municipal Streetlight Grid (Open Data Proxy)",
     status: "demo-simulated" as const,
     observedAt: "2026-11-24",
-    details: "Continuous LED streetlights and illuminated bus shelters along Grand Ave.",
+    details: "Simulated streetlight proxy: Continuous LED streetlights and illuminated bus shelters along Grand Ave.",
   },
   reportedIncidents: {
     count: 0,
     source: "Public Safety Incident Log (Simulated Sample)",
     status: "demo-simulated" as const,
-    observedAt: "Last 90 days",
-    details: "No incidents recorded in available public dataset for this corridor.",
+    observedAt: "Last 90 days (Simulated Period)",
+    details: "No incidents recorded in the simulated incident sample for this corridor (not a crime-free guarantee).",
   },
   pedestrianActivity: {
     level: "High / Active",
     source: "Pedestrian Footfall Proxy",
     status: "demo-simulated" as const,
     observedAt: "Current Evening Interval",
-    details: "Active foot traffic; multiple open cafes, transit stops, and well-lit bank lobbies.",
+    details: "Demo pedestrian-activity proxy: active evening footfall from open commercial storefronts and transit stops.",
   },
   communityFeedback: {
     count: 6,
@@ -107,7 +107,7 @@ const routeBBreakdown = calculateAwarenessIndex(routeBFactors);
 export const DEMO_ROUTE_AWARE: RouteOption = {
   id: "route-condition-aware",
   label: "Condition-Aware Route",
-  tagline: "+4 mins walk: 88% continuous lighting & active pedestrian boulevard",
+  tagline: "+4 mins walk: 88% simulated street-lighting proxy indicator & active demo footfall corridor",
   distanceMeters: 1420,
   durationMinutes: 18,
   isDemo: true,
@@ -123,7 +123,7 @@ export const DEMO_ROUTE_AWARE: RouteOption = {
   factors: routeBFactors,
   breakdown: routeBBreakdown.breakdown,
   coverageLabel: "Strong Observational Coverage (Simulated)",
-  explanation: "Main boulevard route with 88% verified lighting fixtures, steady pedestrian footfall from evening storefronts, and positive community walk reports.",
+  explanation: "Main boulevard route with 88% simulated street-lighting proxy indicator, steady demo pedestrian-activity proxy from evening storefronts, and positive community walk reports.",
 };
 
 // Route C: Transit Corridor (Alternative)
@@ -188,7 +188,7 @@ export const INITIAL_MAP_POIS: MapMarkerPOI[] = [
     position: [37.7780, -122.4168],
     type: "light",
     title: "High-Output Smart LED Corridor",
-    description: "Public infrastructure proxy: Verified operational LED streetlights along Grand Ave.",
+    description: "Demo infrastructure proxy: Simulated operational LED streetlights along Grand Ave.",
     status: "demo-simulated",
   },
   {

@@ -7,18 +7,18 @@
 
 ### 0:20–0:45 — Route Search & Comparison
 “On the SafeWalk AI homepage, we click **'Load Evening Demo Scenario'** (Downtown Metro Station to University Innovation Hub & Public Library). The interactive OpenStreetMap immediately renders three calibrated corridors:
-- **Condition-Aware Route (Active Boulevard):** 18 min walk, 1420 meters, Awareness Index **92/100**.
-- **Fastest Direct Route (Industrial Alley):** 14 min walk, 1150 meters, Awareness Index **15/100**.
+- **Condition-Aware Route (Active Boulevard):** 18 min walk, 1420 meters, Awareness Index **92/100** (88% simulated street-lighting proxy indicator & demo pedestrian-activity proxy).
+- **Fastest Direct Route (Industrial Alley):** 14 min walk, 1150 meters, Awareness Index **15/100** (32% lighting proxy, 3 simulated incidents).
 - **Transit Corridor Alternative:** 16 min walk, 1280 meters, Awareness Index **68/100**.
 Notice how clicking between cards instantly updates the map polylines and highlights the selected corridor.”
 
 ### 0:45–1:10 — Transparent Deterministic Heuristic
 “Unlike black-box models that invent safety probabilities, SafeWalk uses a transparent, deterministic algorithm. Clicking **'Inspect Deterministic Formula Breakdown'** reveals the exact math:
 `Baseline (50) + Lighting (+20) + Activity (+15) + Incident Factor (+5) + Community Observations (+10) = 92/100` (capped at 92 to prevent false safety guarantees).
-Every indicator carries a clear provenance badge: `[DEMO / SIMULATED]`, `[PUBLIC PROXY]`, or `[COMMUNITY]`. Missing data is explicitly marked `UNKNOWN` and never scored as safe.”
+Every indicator carries a clear provenance badge: `[DEMO / SIMULATED]`, `[DEMO PROXY]`, or `[UNVERIFIED COMMUNITY]`. Missing data is explicitly marked `UNKNOWN` and never scored as safe.”
 
 ### 1:10–1:35 — Server-Side AI Intelligence & Fallback
-“Our server-side route intelligence endpoint analyzes the structured factors to synthesize plain-English trade-offs: *'Choosing this route adds approximately 4 minutes of walking in exchange for a +70 pt higher observational awareness index along illuminated commercial storefronts.'* When Gemini API is present, it uses Gemini 1.5 Flash; otherwise, it seamlessly provides our rule-based deterministic fallback.”
+“Our server-side route intelligence endpoint analyzes the structured factors to synthesize plain-English trade-offs: *'Choosing this route adds approximately 4 minutes of walking in exchange for a +77 pt higher observational awareness index with an 88% simulated street-lighting proxy indicator and demo pedestrian-activity proxy from evening commercial storefronts.'* When Gemini API is present, it uses Gemini 1.5 Flash; otherwise, it seamlessly provides our rule-based deterministic fallback.”
 
 ### 1:35–2:00 — Post-Journey Review & Local Persistence
 “After completing a walk, clicking **'Start Journey'** opens the Post-Journey Review modal. We select lighting ('Bright / Good'), activity ('Moderate'), check any obstructions, and add a note: *'Very clear sidewalks and good evening visibility'*.

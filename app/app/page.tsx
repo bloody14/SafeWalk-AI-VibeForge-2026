@@ -164,7 +164,7 @@ export default function SafeWalkHomePage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-night-950">
+    <main className="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-night-950 overflow-x-hidden">
       {/* Navbar */}
       <Navbar
         onOpenDisclosures={() => setShowDisclosuresModal(true)}
