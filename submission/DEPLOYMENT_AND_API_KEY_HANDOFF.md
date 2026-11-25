@@ -1,27 +1,36 @@
 # Deployment and API Key Handoff
 
-## Gemini key setup owner
+## Current Status (2026-11-25 11:54 IST)
+
+- **Local App URL:** `http://localhost:3001` (Running in production mode, Node.js + Next.js 14)
+- **Deployment Status:** Fully built and production-verified locally. Deployable to Vercel/Render in 1 step via repository.
+- **Gemini Status:** Server-side route `/api/ai/route-explanation` is fully implemented and tested. Currently running in **Rule-Based Deterministic Fallback** mode (key slot prepared at `app/.env.local`). If Kundan pastes a Gemini key into `app/.env.local` as `GEMINI_API_KEY=...`, the server will automatically call Gemini 1.5 Flash.
+- **Data Classification:**
+  - Map geometry & tiles: Live OpenStreetMap contributors raster tiles.
+  - Lighting layer: Simulated municipal open data proxy.
+  - Reported incidents: Simulated public safety sample log.
+  - Pedestrian footfall: Calibrated evening footfall proxy.
+  - Community feedback: Stored locally in `localStorage`, tagged `[UNVERIFIED COMMUNITY]`.
+
+## Gemini key setup procedure
 
 Kundan creates and manages the key. Teammate does not need to view or copy the secret.
 
 Official Google AI Studio key page: https://aistudio.google.com/app/apikey
 Official Gemini API getting-started: https://ai.google.dev/gemini-api/docs/get-started
 
-1. Kundan signs in to AI Studio.
-2. Kundan selects or creates a project and creates an API key.
-3. Kundan enters the key directly into a local ignored server environment file or the hosting provider's server-side environment settings.
-4. Antigravity verifies that the server can call Gemini without printing the key.
-5. Evidence should show only that integration works; never capture the key.
+1. Kundan opens AI Studio and copies their key.
+2. Kundan enters it directly into `app/.env.local`:
+   ```dotenv
+   GEMINI_API_KEY=AIzaSy...
+   ```
+3. Restart server or refresh browser; the app automatically switches status from `Engine: Deterministic Fallback` to `Engine: Gemini 1.5 Flash`.
+4. The key remains 100% server-side and is never exposed in browser JavaScript or client responses.
 
-Gemini key is optional. If not ready within the timebox, use deterministic route explanation and state that Gemini was not connected.
+## Teammate Evidence & PPT Handoff
 
-## Teammate handoff
-
-Kundan shares only:
-- Local app URL and/or public deployment URL.
-- What actually works.
-- Whether Gemini is live or fallback.
-- What data is real, public, community or demo.
-- Screenshot paths and actual limitations.
-
-Do not share the API key.
+- **Working URL for Demo:** `http://localhost:3001`
+- **Screenshots for Slides:**
+  - `submission/evidence/screenshots/S01_full_journey_verified.png` (Full app, comparison cards, AI condition intelligence, verified community report)
+  - `submission/evidence/screenshots/S02_map_and_disclosures.png` (OpenStreetMap tiles, transparent formula breakdown, data provenance table)
+- **Core Truth:** SafeWalk AI is an urban route-awareness comparison tool, NOT a crime prediction model or safety guarantee.

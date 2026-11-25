@@ -1,18 +1,25 @@
 # SafeWalk AI — Two-Minute Demo Script
 
-Use the actual working application. Replace bracketed fields with real values and features. Do not present simulated information as real.
+*Walkthrough script tailored to the actual working Next.js SafeWalk AI implementation on `http://localhost:3001`.*
 
-**0:00–0:20 — Problem**
-“Someone who has just arrived in a new city may know where they want to go, but not which walking route has better lighting, what publicly reported incidents are available, or whether local observations are recent. Traditional navigation mainly focuses on distance and time.”
+### 0:00–0:20 — Problem
+“A person newly arrived in a city or walking after dark may know their destination, but conventional navigation only optimizes for distance and travel time. It doesn't tell them which streets have working streetlights, where pedestrian footfall remains active from open storefronts, or what recent walkers observed.”
 
-**0:20–0:45 — Route search and comparison**
-“Here the user enters an origin and destination. SafeWalk displays the route option(s) and compares the fastest choice with a condition-aware alternative where the available route data supports it.”
+### 0:20–0:45 — Route Search & Comparison
+“On the SafeWalk AI homepage, we click **'Load Evening Demo Scenario'** (Downtown Metro Station to University Innovation Hub & Public Library). The interactive OpenStreetMap immediately renders three calibrated corridors:
+- **Condition-Aware Route (Active Boulevard):** 18 min walk, 1420 meters, Awareness Index **85/100**.
+- **Fastest Direct Route (Industrial Alley):** 14 min walk, 1150 meters, Awareness Index **15/100**.
+- **Transit Corridor Alternative:** 16 min walk, 1280 meters, Awareness Index **67/100**.
+Notice how clicking between cards instantly updates the map polylines and highlights the selected corridor.”
 
-**0:45–1:10 — Explain the indicators**
-“Users can inspect lighting, available reported-incident information, pedestrian activity and community observations. We show sources, coverage, freshness and unknowns. The indicator is an awareness aid, not a guarantee of safety.”
+### 0:45–1:10 — Transparent Deterministic Heuristic
+“Unlike black-box models that invent safety probabilities, SafeWalk uses a transparent, deterministic algorithm. Clicking **'Inspect Deterministic Formula Breakdown'** reveals the exact math:
+`Baseline (50) + Lighting (+20) + Activity (0) + Incident Factor (+5) + Community Observations (+10) = 85/100`.
+Every indicator carries a clear provenance badge: `[DEMO / SIMULATED]`, `[PUBLIC PROXY]`, or `[COMMUNITY]`. Missing data is explicitly marked `UNKNOWN` and never scored as safe.”
 
-**1:10–1:40 — Complete journey and feedback**
-“After the journey, the user reports what they actually observed. The feedback appears as user-submitted/unverified and can contribute to future information after appropriate review.”
+### 1:10–1:35 — Server-Side AI Intelligence & Fallback
+“Our server-side route intelligence endpoint analyzes the structured factors to synthesize plain-English trade-offs: *'Choosing this route adds approximately 4 minutes of walking in exchange for a +70 pt higher observational awareness index along illuminated commercial storefronts.'* When Gemini API is present, it uses Gemini 1.5 Flash; otherwise, it seamlessly provides our rule-based deterministic fallback.”
 
-**1:40–2:00 — AI and limitations**
-“AI explains the structured route-factor comparison and can classify feedback. The route calculation itself is transparent application logic. We label demo data and do not claim crime prediction or guaranteed safety.”
+### 1:35–2:00 — Post-Journey Review & Local Persistence
+“After completing a walk, clicking **'Start Journey'** opens the Post-Journey Review modal. We select lighting ('Bright / Good'), activity ('Moderate'), check any obstructions, and add a note: *'Very clear sidewalks and good evening visibility'*.
+Upon clicking submit, the observation is saved locally in browser `localStorage`, immediately appears in the Community Walk Observations feed tagged `[UNVERIFIED]`, and places an interactive `💬` marker on the map for subsequent walkers.”
